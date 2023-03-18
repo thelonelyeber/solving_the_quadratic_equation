@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Решение квадратного уравнения</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+	<div class="container">
+		<h1>Решение квадратного уравнения</h1>
+		<form method="post">
+			<label for="a">Введите коэффициент a:</label>
+			<input type="number" id="a" name="a">
+			<br>
+			<label for="b">Введите коэффициент b:</label>
+			<input type="number" id="b" name="b">
+			<br>
+			<label for="c">Введите коэффициент c:</label>
+			<input type="number" id="c" name="c">
+			<br>
+			<br>
+			<input type="submit" value="Решить">
+		</form>
+		<br>
+		<br>
+		{% if result %}
+		<label>Вы ввели:</label>
+        <div id="equation">{{ equation }}</div>
+		<br>
+		<label>Решение:</label>
+		<div id="result">{{ result }}</div>
+		{% endif %}
+	</div>
+</body>
+</html>
